@@ -1,0 +1,12 @@
+// Define colour variables for light and dark themes
+$background-color: light-dark(#d2b6a1, #271813);
+$text-color: light-dark(#000, #fff);
+
+:root{ 
+    color-scheme: light dark;
+}
+
+.card{
+    background-color: $background-color;
+    color: $text-color;
+}

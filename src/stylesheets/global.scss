@@ -1,0 +1,13 @@
+
+// Define colour variables for light and dark themes
+$background-color: light-dark(#f0f0f0, #121212);
+$text-color: light-dark(#000, #fff);
+
+:root{ 
+    color-scheme: light dark;
+}
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+}
