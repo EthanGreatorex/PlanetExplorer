@@ -1,0 +1,32 @@
+@use "../../stylesheets/global.scss" as *;
+
+.film{
+    background-color: $accent-color;
+    color: #000;
+    padding: 1rem;
+}   
+
+
+.film__list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 2rem;
+}
+
+.film__button{
+    background-color: $background-color;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    .film{
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .film__list{
+        width: 600px;
+    }
+}

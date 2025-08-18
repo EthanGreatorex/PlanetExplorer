@@ -1,0 +1,59 @@
+@use "../../stylesheets/global.scss" as *;
+
+
+.planet{
+    background-color: $accent-color;
+}
+
+.planet__image{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.details{
+    background-color: $accent-color;
+    color: #000;
+    width: 100%;
+    padding: 1rem;
+}
+
+.details__title{
+    font-size: 1.5rem;
+}
+
+.details__info{
+    font-size: 1.1rem;
+}
+
+.details__subheader{
+    font-size: 1.25rem;
+}
+
+.stats__grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 0.5rem;
+    
+}
+
+
+.details__buttion{
+    display: block;
+    width: 100%;
+    background-color: $button-color;
+    border: none;
+    font-size: 1.15rem;
+    padding: 0.7rem;
+}
+
+
+@media (min-width: 768px) {
+    .planet{
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .details{
+        width: 600px;
+    }
+}

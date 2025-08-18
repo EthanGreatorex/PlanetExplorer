@@ -1,0 +1,12 @@
+@use "../../stylesheets/global.scss" as *;
+
+.navbar__button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.navbar{
+    padding: 1rem;
+}

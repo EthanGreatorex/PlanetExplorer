@@ -1,0 +1,22 @@
+@use "../../stylesheets/global.scss" as *;
+
+.form{
+    display: grid;
+    margin-bottom: 70px;
+}
+
+.form__title{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.form__input{
+    font-size: 1.2rem;
+    height: 45px;
+    border: none;
+    box-shadow: 7px 7px 0px rgb(0, 0, 0);
+}
+
+.form__title span{
+    color: $accent-color;
+}

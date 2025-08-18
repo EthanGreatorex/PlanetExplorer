@@ -1,14 +1,21 @@
-import React from 'react';
-import './stylesheets/global.css';
-import PlanetSearch from './components/PlanetSearch';
-import PlanetList from './components/PlanetList';
+import React from "react";
+import "./stylesheets/global.scss";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Planet from "./pages/PlanetPage/PlanetPage";
+import Film from "./pages/FilmPage/FilmPage";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <div className="App">
-      <PlanetSearch></PlanetSearch>
-      <PlanetList></PlanetList>
-    </div>
+    <>
+      <NavBar></NavBar>
+      <Routes>
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/planet/:id" element={<Planet></Planet>}></Route>
+        <Route path="/film/:id" element={<Film></Film>}></Route>
+      </Routes>
+    </>
   );
 }
 
