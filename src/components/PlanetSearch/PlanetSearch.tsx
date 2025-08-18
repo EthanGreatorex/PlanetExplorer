@@ -22,6 +22,7 @@ export default function PlanetSearch({ currentInput, setCurrentInput, debouncedI
   }, [debouncedSetInput]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
     // Update the input visualy straight away
     setCurrentInput(e.target.value)
     // Do not call a planet filter until after a delay

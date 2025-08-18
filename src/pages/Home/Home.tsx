@@ -57,7 +57,7 @@ function Home() {
   },[filteredPlanets])
 
   return (
-    <div className="Home">
+    <div className="home">
       <PlanetSearch
         currentInput={search}
         setCurrentInput={setSearch}

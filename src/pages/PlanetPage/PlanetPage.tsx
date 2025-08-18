@@ -83,7 +83,7 @@ function PlanetPage() {
               the films!
             </p>
           )}
-          <button className="details__buttion" onClick={handleButtonClick}>
+          <button className="details__button" onClick={handleButtonClick}>
             View More Film Details
           </button>
         </div>
@@ -98,7 +98,7 @@ function PlanetPage() {
               Population: {Number(planet?.population).toLocaleString()}
             </p>
             <p className="details__info">Gravity: {planet?.gravity}</p>
-            <p className="details__info">Diameter: {planet?.diameter}km</p>
+            <p className="details__info">Diameter: {Number(planet?.diameter).toLocaleString()} km</p>
             <p className="details__info">
               Surface Water: {planet?.surface_water}%
             </p>

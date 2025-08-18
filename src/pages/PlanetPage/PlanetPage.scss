@@ -3,6 +3,8 @@
 
 .planet{
     background-color: $accent-color;
+    padding: 1rem;
+    color: #000;
 }
 
 .planet__image{
@@ -37,13 +39,14 @@
 }
 
 
-.details__buttion{
+.details__button{
     display: block;
     width: 100%;
     background-color: $button-color;
     border: none;
     font-size: 1.15rem;
     padding: 0.7rem;
+    color: $text-color;
 }
 
 
