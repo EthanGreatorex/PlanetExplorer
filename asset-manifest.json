@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/PlanetExplorer/static/css/main.8be09251.css",
+    "main.js": "/PlanetExplorer/static/js/main.c73cfa8e.js",
+    "index.html": "/PlanetExplorer/index.html",
+    "main.8be09251.css.map": "/PlanetExplorer/static/css/main.8be09251.css.map",
+    "main.c73cfa8e.js.map": "/PlanetExplorer/static/js/main.c73cfa8e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8be09251.css",
+    "static/js/main.c73cfa8e.js"
+  ]
+}
