@@ -1,8 +1,8 @@
 @use "../../stylesheets/global.scss" as *;
 
 .film {
-  background-color: $accent-color;
-  color: #000;
+  background-color: $secondary-color;
+  color: $text-color;
   padding: 1rem;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .film__button {
-  background-color: $background-color;
+  background-color: $accent-color;
   border: none;
   padding: 0.5rem;
   font-size: 1rem;

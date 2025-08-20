@@ -98,7 +98,9 @@ function PlanetPage() {
               Population: {Number(planet?.population).toLocaleString()}
             </p>
             <p className="details__info">Gravity: {planet?.gravity}</p>
-            <p className="details__info">Diameter: {Number(planet?.diameter).toLocaleString()} km</p>
+            <p className="details__info">
+              Diameter: {Number(planet?.diameter).toLocaleString()} km
+            </p>
             <p className="details__info">
               Surface Water: {planet?.surface_water}%
             </p>

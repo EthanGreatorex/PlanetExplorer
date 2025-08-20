@@ -1,7 +1,8 @@
 @use "../../stylesheets/global.scss" as *;
 
 .form{
-    display: grid;
+    display: block;
+    width: 100%;
     margin-bottom: 70px;
 }
 
@@ -11,6 +12,8 @@
 }
 
 .form__input{
+    display: block;
+    width: 100%;
     font-size: 1.2rem;
     height: 45px;
     border: none;

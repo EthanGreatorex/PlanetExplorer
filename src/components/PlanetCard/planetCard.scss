@@ -1,53 +1,58 @@
 @use "../../stylesheets/global.scss" as *;
 // Define colour variables for light and dark themes
 
-:root{ 
-    color-scheme: light dark;
+:root {
+  color-scheme: light dark;
 }
 
+.card {
+  background-color: $secondary-color;
+  color: $text-color;
+  box-shadow: 12px 12px 0px rgb(0, 0, 0);
+  min-width: 350px;
+  max-width: 350px;
+  padding: 1rem;
+}
 
-.card{
-    background-color: $accent-color;
-    color: #000;
-    box-shadow: 12px 12px 0px rgb(0, 0, 0);
+.card__image {
+  width: 100%;
+}
+
+.description__title {
+  font-size: 1.5rem;
+}
+
+.description__info {
+  font-size: 1.2rem;
+}
+
+.description__button {
+  display: block;
+  width: 100%;
+  background-color: $accent-color;
+  font-size: 1.2rem;
+  border: none;
+  padding: 0.7rem;
+  color: $text-color;
+}
+
+@media (min-width: 420px){
+  .card{
     min-width: 400px;
     max-width: 400px;
-    padding: 1rem;
-}
-
-
-.card__image{
-    width: 100%;
-}
-
-.description__title{
-    font-size: 1.5rem;
-}
-
-.description__info{
-    font-size: 1.2rem;
-}
-
-.description__button{
-    display: block;
-    width: 100%;
-    background-color: $button-color;
-    font-size: 1.2rem;
-    border: none;
-    padding: 0.7rem;
-    color: $text-color;
+  }
 }
 
 @media (min-width: 768px) {
-    .card{
-        min-width: 350px;
-        max-width: 350px;
-    }
+  .card {
+    min-width: 350px;
+    max-width: 350px;
+  }
 }
 
 @media (min-width: 840px) {
-    .card{
-        min-width: 500px;
-        max-width: 500px;
-    }
+  .card {
+    min-width: 500px;
+    max-width: 500px;
+  }
 }
