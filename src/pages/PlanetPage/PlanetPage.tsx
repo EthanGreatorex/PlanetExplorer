@@ -31,12 +31,14 @@ function PlanetPage() {
 
   const navigate = useNavigate();
 
+  // A unique id that represents a specific planet e.g., 7. 
   const { id } = useParams();
 
   const handleButtonClick = () => {
     navigate(`/film/${id}`);
   };
 
+  // This is called when id is first initialised or is changed. It will fetch the API data for a singular planet.
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -51,9 +53,6 @@ function PlanetPage() {
     loadData();
   }, [id]);
 
-  useEffect(() => {
-    console.log(planet?.residents);
-  }, [planet]);
 
   return (
     <div className="planet">

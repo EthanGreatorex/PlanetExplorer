@@ -6,29 +6,36 @@ import "./FilmPage.scss";
 
 interface Film {
   title: string;
-  url: string;
 }
 
 interface Resident {
   name: string;
-  url: string;
 }
 
 function FilmPage() {
+  // holds the list of all the API urls to each film
   const [films, setFilms] = useState<string[] | null>(null);
+  // holds the list of all the API urls to each resident
   const [residents, setResidents] = useState<string[] | null>(null);
+
+  // filmDetails & residentDetails holds the JSON data fetched from the API
   const [filmDetails, setFilmDetails] = useState<Film[]>([]);
   const [residentDetails, setResidentDetails] = useState<Resident[]>([]);
+
+  // This stores only the planet name
   const [planetName, setPlanetName] = useState<string>("");
 
+  // A unique id e.g., 7 which allows us to fetch a specific planet from the API
   const { id } = useParams();
 
   const navigate = useNavigate();
 
+  // This is called when the clicks a button to go back
   const handleClick = () => {
-    navigate(`/planet/${id}`)
-  }
+    navigate(`/planet/${id}`);
+  };
 
+  // This is called whenever id is initialised or changes. It fetches the API data for one planet.
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -45,7 +52,12 @@ function FilmPage() {
     loadData();
   }, [id]);
 
+  //**
+  //  This is called whenever the films or residents useState is updated or initiated.
+  // It will fetch the data from each API url inside the films and residents array
+  // */
   useEffect(() => {
+    //
     const fetchDetails = async (urls: string[]) => {
       const responses = await Promise.all(urls.map((url) => fetch(url)));
       const data = await Promise.all(responses.map((res) => res.json()));
@@ -63,8 +75,10 @@ function FilmPage() {
 
   return (
     <div className="film">
-        <button className="film__button" onClick={handleClick}>Back</button>
-        <h3>{planetName}</h3>
+      <button className="film__button" onClick={handleClick}>
+        Back
+      </button>
+      <h3>{planetName}</h3>
       <img
         src={`https://placehold.co/300x200/0a0a0a/ffffff?text=${planetName}+Planet+Image`}
         alt={planetName}
@@ -73,14 +87,14 @@ function FilmPage() {
       <h3 className="film__title">Films</h3>
       <ul className="film__list">
         {filmDetails.map((film) => (
-          <li key={film.url}>{film.title}</li>
+          <li key={film.title}>{film.title}</li>
         ))}
       </ul>
 
       <h3 className="film__title">Residents</h3>
       <ul className="film__list">
         {residentDetails.map((resident) => (
-          <li key={resident.url}>{resident.name}</li>
+          <li key={resident.name}>{resident.name}</li>
         ))}
       </ul>
     </div>

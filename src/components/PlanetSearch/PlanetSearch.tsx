@@ -10,17 +10,22 @@ interface Props {
 }
 
 export default function PlanetSearch({ currentInput, setCurrentInput, debouncedInput, setDebouncedInput }: Props) {
+
+  // This will update the debouncedInput state after 200ms
   const debouncedSetInput = useMemo(
     () => debounce(setDebouncedInput, 200),
     [setDebouncedInput]
   );
 
+  // This will cancel the useMemo if it's state changes or is unmounted
   useEffect(() => {
     return () => {
       debouncedSetInput.cancel();
     };
   }, [debouncedSetInput]);
 
+
+  // This is called each time the user makes a change inside the input field
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     // Update the input visualy straight away

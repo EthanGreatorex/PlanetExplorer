@@ -37,6 +37,7 @@ function Home() {
     loadData();
   }, []);
 
+  // This will be called when the debouncedInput is updated. It will filter the planets based on the search query
   const filteredPlanets = useMemo(() => {
     if (search.trim() === "") {
       return planets;
@@ -52,6 +53,8 @@ function Home() {
     });
   }, [planets, debouncedInput]);
 
+
+  // This use effect will update the currentResults use state which holds the amount of planets matching the user query
   useEffect(() => {
     setCurrentResults(filteredPlanets.length)
   },[filteredPlanets])
