@@ -21,7 +21,7 @@ export default function PlanetCard({ name, climate, terrain, url }: Props) {
   };
 
   return (
-    <div className="card">
+    <article className="card">
       <img
         className="card__image"
         src={`https://placehold.co/300x200/0a0a0a/ffffff?text=${name}+Planet+Image`}
@@ -36,6 +36,6 @@ export default function PlanetCard({ name, climate, terrain, url }: Props) {
           View More Details
         </button>
       </div>
-    </div>
+    </article>
   );
 }

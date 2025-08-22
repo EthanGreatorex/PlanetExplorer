@@ -1,5 +1,4 @@
 @use "../../stylesheets/global.scss" as *;
-// Define colour variables for light and dark themes
 
 :root {
   color-scheme: light dark;
@@ -52,7 +51,7 @@
 
 @media (min-width: 840px) {
   .card {
-    min-width: 500px;
-    max-width: 500px;
+    min-width: 400px;
+    max-width: 400px;
   }
 }

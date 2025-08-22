@@ -40,7 +40,7 @@ export default function PlanetSearch({ currentInput, setCurrentInput, debouncedI
       <input
         type="text"
         className="form__input"
-        placeholder="Start typing..."
+        placeholder="Search for planet names, climate and terrain..."
         value={currentInput}
         onChange={handleChange}
       />
