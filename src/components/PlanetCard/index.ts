@@ -1,1 +1,1 @@
-export { default } from './PlanetCard'
+export { default } from './PlanetCard';

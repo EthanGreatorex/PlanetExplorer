@@ -1,1 +1,1 @@
-export { default } from './PlanetSearch'
+export { default } from './PlanetSearch';

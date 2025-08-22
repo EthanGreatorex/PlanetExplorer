@@ -1,13 +1,13 @@
-@use "../../stylesheets/global.scss" as *;
-
-.navbar__button {
-  background-color: transparent;
-  border: none;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  color: $text-color;
-}
+@use '../../stylesheets/global.scss' as *;
 
 .navbar {
   padding: 1rem;
+
+  &__button {
+    background-color: transparent;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: $text-color;
+    padding: 0.5rem 0.75rem;
+  }
 }

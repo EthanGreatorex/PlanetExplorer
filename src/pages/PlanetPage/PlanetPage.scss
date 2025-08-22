@@ -1,14 +1,23 @@
-@use "../../stylesheets/global.scss" as *;
+@use '../../stylesheets/global.scss' as *;
 
 .planet {
   background-color: $secondary-color;
   padding: 1rem;
   color: $text-color;
-}
 
-.planet__image {
-  width: 100%;
-  margin-bottom: 20px;
+  &__image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    width: 100%;
+    padding: 2rem;
+  }
 }
 
 .details {
@@ -16,43 +25,31 @@
   color: $text-color;
   width: 100%;
   padding: 1rem;
-}
 
-.details__title {
-  font-size: 1.5rem;
-}
+  &__info {
+    font-size: 1.1rem;
+  }
 
-.details__info {
-  font-size: 1.1rem;
-}
+  &__subheader {
+    font-size: 1.25rem;
+  }
 
-.details__subheader {
-  font-size: 1.25rem;
+  &__button {
+    display: block;
+    width: 100%;
+    background-color: $accent-color;
+    font-size: 1.15rem;
+    padding: 0.7rem;
+    color: $text-color;
+  }
+
+  @media (min-width: 768px) {
+    width: 600px;
+  }
 }
 
 .stats__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0 0.5rem;
-}
-
-.details__button {
-  display: block;
-  width: 100%;
-  background-color: $accent-color;
-  border: none;
-  font-size: 1.15rem;
-  padding: 0.7rem;
-  color: $text-color;
-}
-
-@media (min-width: 768px) {
-  .planet {
-    width: 100%;
-    padding: 2rem;
-  }
-
-  .details {
-    width: 600px;
-  }
 }

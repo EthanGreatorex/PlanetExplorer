@@ -1,1 +1,1 @@
-export { default } from "./PlanetList"
+export { default } from './PlanetList';

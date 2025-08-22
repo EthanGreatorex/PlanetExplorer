@@ -1,13 +1,12 @@
-import "./NavBar.scss";
-import { useNavigate } from "react-router-dom";
+import './NavBar.scss';
+import { useNavigate } from 'react-router-dom';
 
 function NavBar() {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
-
-    const handleClick = () => {
-        navigate('/');
-    }
+  const handleClick = () => {
+    navigate('/');
+  };
 
   return (
     <nav className="navbar">
