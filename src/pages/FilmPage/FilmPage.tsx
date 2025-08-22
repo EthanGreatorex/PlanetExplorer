@@ -46,11 +46,11 @@ export default function FilmPage() {
   // Fetch resident details based on their API URLs
   useEffect(() => {
     Promise.all((residents || []).map((url) => fetchResident(url))).then((data) => {
-      setResidentDetails(data.filter((e) => e !== null) as Resident[]);
+      setResidentDetails(data.filter((e) => e !== null) as Resident[]); // as Resident[] not required in later version of TypeScript
     });
 
     Promise.all((films || []).map((url) => fetchFilm(url))).then((data) => {
-      setFilmDetails(data.filter((e) => e !== null) as Film[]);
+      setFilmDetails(data.filter((e) => e !== null) as Film[]); // as Film[] not required in later version of TypeScrip
     });
   }, [films, residents]);
 
