@@ -1,10 +1,10 @@
 // Import font
-@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 // Define colour variables for light and dark themes
 $background-color: light-dark(#eaeaea, #1d1d1d);
 $text-color: light-dark(#000, #fff);
-$font-family: "Roboto", sans-serif;
+$font-family: 'Roboto', sans-serif;
 $secondary-color: light-dark(#dcdbda, #232323);
 $accent-color: #ff991d;
 $button-color: light-dark(#eae9e9, #222222);
@@ -36,12 +36,11 @@ body {
 }
 
 button {
-  transition: all 0.3s ease-in-out;
-  height: 40px;
+  transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  border: 1px solid transparent;
 }
 
 button:hover {
   background-color: transparent;
-  height: 39px;
   border: 1px solid $accent-color;
 }

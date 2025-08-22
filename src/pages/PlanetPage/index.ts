@@ -1,1 +1,1 @@
-export {default} from "./PlanetPage"
+export { default } from './PlanetPage';

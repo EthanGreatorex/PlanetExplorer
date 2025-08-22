@@ -1,1 +1,1 @@
-export { default } from "./NarBar";
+export { default } from './NarBar';

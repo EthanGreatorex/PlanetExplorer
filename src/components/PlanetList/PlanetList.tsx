@@ -1,31 +1,22 @@
-import PlanetCard from "../PlanetCard/PlanetCard";
-import './planetList.scss'
+// Components
+import PlanetCard from '../PlanetCard/PlanetCard';
 
-interface Planet {
-  name: string;
-  climate: string;
-  terrain: string;
-  url: string;
-}
+// Styles
+import './planetList.scss';
+
+// Types
+import type { Planet } from '../../services/api';
 
 interface PlanetListProps {
-  planets: Planet[]
+  planets: Planet[];
 }
 
-export default function PlanetList({ planets } : PlanetListProps) {
+export default function PlanetList({ planets }: PlanetListProps) {
   return (
-    <>
-      <div className="planet-list">
-        {planets.map((planet) => (
-          <PlanetCard
-            key={planet.name}
-            url={planet.url}
-            name={planet.name}
-            climate={planet.climate}
-            terrain={planet.terrain}
-          ></PlanetCard>
-        ))}
-      </div>
-    </>
+    <div className="planet-list">
+      {planets.map(({ name, url, climate, terrain }) => (
+        <PlanetCard key={name} url={url} name={name} climate={climate} terrain={terrain} />
+      ))}
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-@use "../../stylesheets/global.scss" as *;
+@use '../../stylesheets/global.scss' as *;
 
 :root {
   color-scheme: light dark;
@@ -11,46 +11,44 @@
   min-width: 350px;
   max-width: 350px;
   padding: 1rem;
-}
 
-.card__image {
-  width: 100%;
-}
+  &__image {
+    width: 100%;
+  }
 
-.description__title {
-  font-size: 1.5rem;
-}
+  &__title {
+    font-size: 1.5rem;
+  }
 
-.description__info {
-  font-size: 1.2rem;
-}
+  &__info {
+    font-size: 1.2rem;
+  }
 
-.description__button {
-  display: block;
-  width: 100%;
-  background-color: $accent-color;
-  font-size: 1.2rem;
-  border: none;
-  padding: 0.7rem;
-  color: $text-color;
-}
+  &__button {
+    display: block;
+    width: 100%;
+    background-color: $accent-color;
+    font-size: 1.2rem;
+    padding: 0.7rem;
+    color: $text-color;
 
-@media (min-width: 420px){
-  .card{
+    &:focus-visible {
+      outline: 2px solid white;
+      outline-offset: -4px;
+    }
+  }
+
+  @media (min-width: 420px) {
     min-width: 400px;
     max-width: 400px;
   }
-}
 
-@media (min-width: 768px) {
-  .card {
+  @media (min-width: 768px) {
     min-width: 350px;
     max-width: 350px;
   }
-}
 
-@media (min-width: 840px) {
-  .card {
+  @media (min-width: 840px) {
     min-width: 400px;
     max-width: 400px;
   }

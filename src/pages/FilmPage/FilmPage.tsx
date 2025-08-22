@@ -1,21 +1,18 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { fetchPlanets } from "../../services/api";
-import "./FilmPage.scss";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-interface Film {
-  title: string;
-}
+// Helpers
+import { fetchFilm, fetchPlanetById, fetchResident } from '../../services/api';
 
-interface Resident {
-  name: string;
-}
+// Styles
+import './FilmPage.scss';
 
-function FilmPage() {
-  // holds the list of all the API urls to each film
+//Types
+import type { Film, Resident } from '../../services/api';
+
+export default function FilmPage() {
   const [films, setFilms] = useState<string[] | null>(null);
-  // holds the list of all the API urls to each resident
   const [residents, setResidents] = useState<string[] | null>(null);
 
   // filmDetails & residentDetails holds the JSON data fetched from the API
@@ -23,7 +20,7 @@ function FilmPage() {
   const [residentDetails, setResidentDetails] = useState<Resident[]>([]);
 
   // This stores only the planet name
-  const [planetName, setPlanetName] = useState<string>("");
+  const [planetName, setPlanetName] = useState<string>('');
 
   // A unique id e.g., 7 which allows us to fetch a specific planet from the API
   const { id } = useParams();
@@ -37,40 +34,24 @@ function FilmPage() {
 
   // This is called whenever id is initialised or changes. It fetches the API data for one planet.
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        const planetData = await fetchPlanets(
-          `https://swapi.info/api/planets/${id}`
-        );
-        setFilms(planetData.films);
-        setResidents(planetData.residents);
-        setPlanetName(planetData.name);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    loadData();
+    fetchPlanetById(id!).then((data) => {
+      if (!data) return;
+
+      setPlanetName(data.name);
+      setFilms(data.films);
+      setResidents(data.residents);
+    });
   }, [id]);
 
-  //**
-  //  This is called whenever the films or residents useState is updated or initiated.
-  // It will fetch the data from each API url inside the films and residents array
-  // */
+  // Fetch resident details based on their API URLs
   useEffect(() => {
-    //
-    const fetchDetails = async (urls: string[]) => {
-      const responses = await Promise.all(urls.map((url) => fetch(url)));
-      const data = await Promise.all(responses.map((res) => res.json()));
-      return data;
-    };
+    Promise.all((residents || []).map((url) => fetchResident(url))).then((data) => {
+      setResidentDetails(data.filter((e) => e !== null) as Resident[]);
+    });
 
-    if (films) {
-      fetchDetails(films).then(setFilmDetails);
-    }
-
-    if (residents) {
-      fetchDetails(residents).then(setResidentDetails);
-    }
+    Promise.all((films || []).map((url) => fetchFilm(url))).then((data) => {
+      setFilmDetails(data.filter((e) => e !== null) as Film[]);
+    });
   }, [films, residents]);
 
   return (
@@ -100,5 +81,3 @@ function FilmPage() {
     </div>
   );
 }
-
-export default FilmPage;

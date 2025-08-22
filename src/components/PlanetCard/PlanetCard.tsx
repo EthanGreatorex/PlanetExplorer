@@ -1,6 +1,7 @@
-import React from "react";
-import "./planetCard.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
+// Styles
+import './planetCard.scss';
 
 interface Props {
   name: string;
@@ -12,12 +13,12 @@ interface Props {
 export default function PlanetCard({ name, climate, terrain, url }: Props) {
   const navigate = useNavigate();
 
-  //**
-  //  This will route the user to view about the planet they clicked on
-  // **//
+  /**
+   * This will route the user to view about the planet they clicked on
+   */
   const handleCardClick = () => {
-    const planetID = url.split("/").pop()
-    navigate(`/planet/${planetID}`)
+    const planetID = url.split('/').pop();
+    navigate(`/planet/${planetID}`);
   };
 
   return (
@@ -29,10 +30,10 @@ export default function PlanetCard({ name, climate, terrain, url }: Props) {
         loading="lazy"
       />
       <div className="card__description">
-        <h3 className="description__title">{name}</h3>
-        <p className="description__info">Climate: {climate}</p>
-        <p className="description__info">Terrain: {terrain}</p>
-        <button className="description__button" onClick={handleCardClick}>
+        <h3 className="card__title">{name}</h3>
+        <p className="card__info">Climate: {climate}</p>
+        <p className="card__info">Terrain: {terrain}</p>
+        <button className="card__button" onClick={handleCardClick}>
           View More Details
         </button>
       </div>

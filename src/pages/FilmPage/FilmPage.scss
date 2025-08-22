@@ -1,32 +1,29 @@
-@use "../../stylesheets/global.scss" as *;
+@use '../../stylesheets/global.scss' as *;
 
 .film {
   background-color: $secondary-color;
   color: $text-color;
   padding: 1rem;
-}
 
-.film__list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem 2rem;
-}
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem 2rem;
 
-.film__button {
-  background-color: $accent-color;
-  border: none;
-  padding: 0.5rem;
-  font-size: 1rem;
-  color: $text-color;
-}
-
-@media (min-width: 768px) {
-  .film {
-    width: 100%;
-    padding: 2rem;
+    @media (min-width: 768px) {
+      width: 600px;
+    }
   }
 
-  .film__list {
-    width: 600px;
+  &__button {
+    background-color: $accent-color;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: $text-color;
+  }
+
+  @media (min-width: 768px) {
+    width: 100%;
+    padding: 2rem;
   }
 }
