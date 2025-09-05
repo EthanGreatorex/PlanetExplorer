@@ -23,7 +23,7 @@ export default function Home() {
     });
   }, []);
 
-  // This will be called when the debouncedInput is updated. It will filter the planets based on the search query
+  // This will be called when the search is updated. It will filter the planets based on the search query
   const filteredPlanets = useMemo(() => {
     if (search.trim() === '') return planets;
 

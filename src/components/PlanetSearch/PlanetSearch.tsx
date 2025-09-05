@@ -4,11 +4,11 @@ import './planetSearch.scss';
 interface Props {
   onUpdate: (input: string) => void;
 }
-
+ 
 export default function PlanetSearch({ onUpdate }: Props) {
   const debounce = useRef<number | undefined>(undefined);
 
-  /**
+  /** 
    * Handles the change event for the input field.
    * @param e The change event from the input field.
    */
